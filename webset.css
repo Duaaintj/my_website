@@ -164,7 +164,7 @@ nav ul li a {
 
 
 
-/* CSS (قسم Features) */
+
 #features {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -502,104 +502,35 @@ hr {
 
 
 @media only screen and (max-width: 770px) {
-    #header {
-        background-image: none;
-    }
+  #header {
+    background-image: none;
+    min-height: auto !important;
+    padding-bottom: 20px !important;
+  }
 
-    .container {
-        margin-left: 20px;
-        margin-right: 20px;
-        width: 90%;
-    }
+  .container {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 90%;
+  }
 
-    .logo {
-        margin-top: 20px;
-        width: 60px;
-    }
+  .logo {
+    margin-top: 20px;
+    width: 60px;
+  }
 
-    .header-text {
-        margin-top: 60px;
-    }
+  .header-text {
+    margin-top: 10px !important;
+  }
 
-    h1 {
-        font-size: 24px;
-    }
+  .header-content {
+    margin-bottom: 20px !important;
+  }
 
-    .btn {
-        padding: 10px 20px;
-    }
-
-    #Menubtn {
-        width: 35px;
-        margin-right: 20px;
-    }
-
-    /* تجاوب قسم About Us */
-    .about-left, .about-right {
-        flex-basis: 100%;
-        text-align: center;
-    }
-
-    .about-text {
-        margin: 30px auto;
-    }
-
-    /* تجاوب قسم Features */
-    .feature-col {
-        flex-basis: 100%;
-        margin-bottom: 30px;
-    }
-
-    /* تجاوب قسم Courses */
-    .course-left, .course-right {
-        flex-basis: 100%;
-        text-align: center;
-    }
-
-    .course-text {
-        margin: 0 auto 30px auto;
-    }
-
-    /* تجاوب قسم Quote Section */
-    .quote-left, .quote-right {
-        flex-basis: 100%;
-        text-align: center;
-    }
-
-    .quote-text {
-        margin: 0 auto 30px auto;
-    }
-
-    /* تجاوب قسم Contact Us */
-    .contact-left, .contact-right {
-        flex-basis: 100%;
-    }
-
-    .contact-right {
-        margin-top: 30px;
-    }
-
-    /* تجاوب قسم Footer */
-    .footer-left, .footer-right {
-        flex-basis: 100%;
-        margin-bottom: 30px;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-info {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .copy-write, .footer-logo {
-        flex-basis: 100%;
-    }
+  section {
+    padding: 30px 0 !important;
+    margin: 0 !important;
+  }
 }
 
 
