@@ -502,44 +502,23 @@ hr {
 
 
 @media only screen and (max-width: 770px) {
+  
   #header {
-    background-image: none;
     height: auto !important;
     min-height: auto !important;
-    padding-top: 10px !important;
     padding-bottom: 0 !important;
-  }
-
-  .container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-  }
-
-  .logo {
-    margin-top: 10px !important;
-    width: 50px !important;
-  }
-
-  .header-content {
-    margin-top: 10px !important;
     margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
   }
 
-  .header-text {
+  
+  #about-us {
     margin-top: 0 !important;
-    margin-bottom: 10px !important;
+    padding-top: 20px !important;
   }
 
-  .header-image img {
-    max-height: 250px !important;
+  .about-left, .about-right {
     margin-top: 0 !important;
-  }
-
-  section {
-    padding: 15px 0 !important;
-    margin: 0 !important;
+    padding-top: 0 !important;
   }
 }
 
