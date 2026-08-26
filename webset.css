@@ -1,0 +1,703 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    min-height: 100vh;
+    background-color: #0d1b2a;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.container {
+    margin-right: 80px;
+    margin-left: 80px;
+}
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    width: 70px !important;
+    height: auto !important;
+    display: block;
+}
+
+#Menubtn {
+    width: 35px;
+    cursor: pointer;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.header-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.header-text h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.header-text h2 {
+    font-size: 20px;
+    color: #e0e1dd;
+    margin-bottom: 15px;
+}
+
+.header-text p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.header-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 12px;
+    mix-blend-mode: screen;
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+}
+
+#sidenav {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    background-color: #1b263b;
+    z-index: 9999;
+    transition: 0.4s ease;
+}
+nav ul {
+    list-style: none;
+    margin: 50px 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+#Menubtn {
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    top: 25px;
+    right: 35px;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+
+#about-us {
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #0d1b2a; 
+    color: #ffffff;
+}
+
+.about-left {
+    flex-basis: 50%;
+}
+
+.about-left img {
+    width: 100%;
+    display: block;
+}
+
+.about-right {
+    flex-basis: 50%;
+    text-align: left;
+}
+
+.about-text {
+    max-width: 500px;
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.about-text h1 {
+    color: #ffffff;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    color: #e0e6ed;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.about-text h2 {
+    font-style: italic;
+    color: #e2b168;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.about-text h3 {
+    color: #f3c677;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+
+
+/* CSS (قسم Features) */
+#features {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #0d1b2a;
+    color: #ffffff;
+}
+
+.feature-row {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.feature-col {
+    flex-basis: 30%;
+    text-align: center;
+}
+
+.feature-col img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.feature-col h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #f3c677;
+}
+
+.feature-col p {
+    color: #e0e6ed;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.feature-btn {
+    margin: 50px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+#courses {
+    padding: 100px 0;
+    background-color: #0d1b2a;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+.course-left {
+    flex-basis: 50%;
+}
+
+.course-text {
+    max-width: 350px;
+}
+
+.course-text h1 {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.course-text p {
+    font-size: 15px;
+    color: #e0e6ed;
+    line-height: 1.6;
+}
+
+.course-text button {
+    margin: 30px 0;
+}
+
+.course-right {
+    flex-basis: 50%;
+}
+
+.course-right img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+
+
+
+
+
+
+#quote-section {
+    padding: 100px 0;
+    background-color: #0d1b2a;
+    color: #ffffff;
+}
+
+.quote-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+.quote-left {
+    flex-basis: 50%;
+}
+
+.quote-text {
+    max-width: 400px;
+}
+
+.quote-icon {
+    font-size: 70px;
+    color: #f3c677;
+    display: block;
+    line-height: 30px;
+    margin-bottom: 20px;
+    font-family: Georgia, serif;
+}
+
+#quote-section h2 {
+    font-size: 24px;
+    font-style: italic;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+#quote-section p {
+    color: #f3c677;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.quote-right {
+    flex-basis: 50%;
+}
+
+.quote-right img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+
+
+
+
+
+#contact {
+    padding: 100px 0;
+    background-color: #0d1b2a;
+    color: #ffffff;
+}
+
+.container-contact {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+.contact-left, .contact-right {
+    flex-basis: 50%;
+}
+
+.contact-left h1 {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-right img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+form {
+    max-width: 350px;
+    margin: 30px auto 0;
+}
+
+form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    outline: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    border: 1px solid #f3c677;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form input::placeholder {
+    color: #a0aec0;
+}
+
+form input:focus {
+    border-color: #ffffff;
+}
+
+.btn-sign {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+
+
+#footer {
+    padding: 40px 0 60px 0;
+    background-color: #0d1b2a;
+    color: #ffffff;
+}
+
+.container-footer-row {
+    width: 80%;
+    margin: auto;
+}
+
+hr {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #f3c677, transparent);
+    margin-bottom: 50px;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    flex-basis: 50%;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.links-title {
+    margin-bottom: 20px;
+}
+
+.links-title h4 {
+    color: #f3c677;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.links-title small, .links-title small a {
+    color: #e0e6ed;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 2;
+    transition: 0.3s;
+}
+
+.links-title small a:hover {
+    color: #f3c677;
+}
+
+.footer-right {
+    flex-basis: 40%;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.copy-write {
+    flex-basis: 55%;
+    color: #a0aec0;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.footer-logo {
+    flex-basis: 40%;
+    text-align: center;
+}
+
+.logo-footer {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+.footer-logo button {
+    padding: 8px 20px;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 770px) {
+    #header {
+        background-image: none;
+    }
+
+    .container {
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 90%;
+    }
+
+    .logo {
+        margin-top: 20px;
+        width: 60px;
+    }
+
+    .header-text {
+        margin-top: 60px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
+
+    #Menubtn {
+        width: 35px;
+        margin-right: 20px;
+    }
+
+    /* تجاوب قسم About Us */
+    .about-left, .about-right {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .about-text {
+        margin: 30px auto;
+    }
+
+    /* تجاوب قسم Features */
+    .feature-col {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* تجاوب قسم Courses */
+    .course-left, .course-right {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .course-text {
+        margin: 0 auto 30px auto;
+    }
+
+    /* تجاوب قسم Quote Section */
+    .quote-left, .quote-right {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .quote-text {
+        margin: 0 auto 30px auto;
+    }
+
+    /* تجاوب قسم Contact Us */
+    .contact-left, .contact-right {
+        flex-basis: 100%;
+    }
+
+    .contact-right {
+        margin-top: 30px;
+    }
+
+    /* تجاوب قسم Footer */
+    .footer-left, .footer-right {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .copy-write, .footer-logo {
+        flex-basis: 100%;
+    }
+}
+
+
+
+
+
+.social-icons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-icons img {
+    width: 35px;
+    height: 35px;
+    margin: 0 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+}
+
+
+
+
+.about-left img, .course-right img, .quote-right img {
+    width: 100%;
+    display: block;
+    mix-blend-mode: screen;
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.about-left img, .about-right img,
+.course-left img, .course-right img,
+.quote-left img, .quote-right img {
+    max-width: 420px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    mix-blend-mode: screen;
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+}
+
+
+#header, #about-us, #features, #courses, #quote-section, #contact {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 0;
+}
+
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto 30px auto;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    margin: 0;
+}
+
+#Menubtn {
+    width: 35px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+    
+
+
+
+
+        
