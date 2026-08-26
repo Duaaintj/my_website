@@ -636,6 +636,27 @@ hr {
 
 
 
+@media only screen and (max-width: 770px) {
+  
+  #header, .header, header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  
+  #header + section, 
+  section:nth-of-type(2), 
+  .about, #about {
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+  }
+}
+
+
+
+
+
+
     
 
 
