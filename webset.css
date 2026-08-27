@@ -320,38 +320,47 @@ hr {
 
 
 
+#Menubtn {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+    position: relative;
+    z-index: 10001;
+}
+
 #sidenav {
     width: 250px;
     height: 100vh;
     position: fixed;
     top: 0;
-    right: -250px; /* إخفاء القائمة خارج الشاشة جهة اليمين */
+    right: -250px;
     background-color: #1b263b;
-    z-index: 9999;
-    transition: 0.4s ease; /* حركية سلسة عند الفتح والإغلاق */
+    z-index: 10000;
+    transition: right 0.4s ease;
+    padding-top: 80px;
 }
 
-nav ul {
+#sidenav nav ul {
     list-style: none;
-    margin: 80px 30px;
-    padding: 0;
+    padding: 0 30px;
+    margin: 0;
 }
 
-nav ul li {
+#sidenav nav ul li {
     margin-bottom: 25px;
 }
 
-nav ul li a {
+#sidenav nav ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: 16px;
     font-weight: 500;
     display: block;
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #f3c677;
+#sidenav nav ul li a:hover {
+    color: #f3c677 !important;
 }
 
 
