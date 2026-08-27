@@ -295,7 +295,7 @@ hr {
     width: 70px;
 }
 
-/* Responsive Styles for Mobile */
+
 @media (max-width: 768px) {
     .header-content,
     .about-container,
@@ -317,6 +317,45 @@ hr {
         gap: 20px;
     }
 }
+
+
+
+#sidenav {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -250px; /* إخفاء القائمة خارج الشاشة جهة اليمين */
+    background-color: #1b263b;
+    z-index: 9999;
+    transition: 0.4s ease; /* حركية سلسة عند الفتح والإغلاق */
+}
+
+nav ul {
+    list-style: none;
+    margin: 80px 30px;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f3c677;
+}
+
+
+
 
 
 
