@@ -23,7 +23,7 @@ img {
     display: block;
 }
 
-/* Header Section */
+
 #header {
     padding: 30px 0;
     min-height: 90vh;
@@ -79,7 +79,7 @@ img {
     flex: 1;
 }
 
-/* Section 2: About Us */
+
 #about-us {
     padding: 80px 0;
 }
@@ -118,7 +118,7 @@ img {
     color: #f3c677;
 }
 
-/* Section 3: Features */
+
 #features {
     padding: 60px 0;
 }
@@ -151,7 +151,7 @@ img {
     line-height: 1.6;
 }
 
-/* Section 4: Courses */
+
 #courses {
     padding: 80px 0;
 }
@@ -176,7 +176,7 @@ img {
     line-height: 1.6;
 }
 
-/* Section 5: Join Our Community */
+
 #contact {
     padding: 80px 0;
 }
@@ -223,7 +223,7 @@ button {
     cursor: pointer;
 }
 
-/* Common Styling for Blend Images */
+
 .header-image img,
 .about-left img,
 .course-right img,
@@ -237,7 +237,7 @@ button {
     -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
 }
 
-/* Footer */
+
 #footer {
     padding: 40px 0;
 }
