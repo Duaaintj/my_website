@@ -113,11 +113,6 @@ nav ul li a {
     flex-basis: 50%;
 }
 
-.about-left img {
-    width: 100%;
-    display: block;
-}
-
 .about-right {
     flex-basis: 50%;
     text-align: left;
@@ -239,12 +234,6 @@ nav ul li a {
     flex-basis: 50%;
 }
 
-.course-right img {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
-}
-
 #quote-section {
     padding: 100px 0;
     background-color: #0d1b2a;
@@ -296,21 +285,31 @@ nav ul li a {
     flex-basis: 50%;
 }
 
-.quote-right img {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
-}
-
 #contact {
-    padding: 100px 0;
+    padding: 60px 0;
     background-color: #0d1b2a;
     color: #ffffff;
+    overflow: hidden;
+}
+
+#contact .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-left, 
+.contact-right {
+    flex: 1;
+    min-width: 280px;
+    width: 100%;
 }
 
 form {
-    max-width: 350px;
-    margin: 30px auto 0;
+    max-width: 100%;
+    margin: 20px auto 0;
 }
 
 form input {
@@ -319,7 +318,6 @@ form input {
     margin-bottom: 15px;
     outline: none;
     box-shadow: none;
-    border-sizing: border-box;
     border: 1px solid #f3c677;
     background-color: rgba(255, 255, 255, 0.05);
     color: #ffffff;
@@ -388,7 +386,8 @@ hr {
     margin-bottom: 12px;
 }
 
-.links-title small, .links-title small a {
+.links-title small, 
+.links-title small a {
     color: #e0e1dd;
     text-decoration: none;
     font-size: 14px;
@@ -453,13 +452,17 @@ hr {
     filter: brightness(1.2);
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 .about-left img, 
 .course-right img, 
 .quote-right img,
-.course-left img,
-.about-right img,
-.quote-left img {
-    max-width: 420px;
+.contact-right img {
+    max-width: 100%;
     width: 100%;
     height: auto;
     display: block;
@@ -487,7 +490,8 @@ hr {
         gap: 20px;
     }
 
-    .header-text, .header-image {
+    .header-text, 
+    .header-image {
         max-width: 100%;
     }
 
@@ -496,12 +500,23 @@ hr {
         margin-top: 0;
     }
 
-    .about-left, .about-right,
-    .course-left, .course-right,
-    .quote-left, .quote-right,
-    .footer-left, .footer-right {
+    .about-left, 
+    .about-right,
+    .course-left, 
+    .course-right,
+    .quote-left, 
+    .quote-right,
+    .footer-left, 
+    .footer-right,
+    .contact-left, 
+    .contact-right {
         flex-basis: 100%;
+        max-width: 100%;
         margin-bottom: 30px;
+    }
+
+    #contact .container {
+        flex-direction: column;
     }
 
     .about-text {
