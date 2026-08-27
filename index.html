@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="webset.css">
 </head>
 <body>
+    <div id="sidenav">
+    <nav>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#about-us">ABOUT US</a></li>
+            <li><a href="#features">FEATURES</a></li>
+            <li><a href="#courses">COURSES</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+</div>
 
     
     <section id="header">
@@ -144,6 +155,19 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    const menuBtn = document.getElementById("Menubtn");
+const sideNav = document.getElementById("sidenav");
+
+menuBtn.onclick = function () {
+    if (sideNav.style.right === "0px") {
+        sideNav.style.right = "-250px";
+    } else {
+        sideNav.style.right = "0px";
+    }
+}
+    </script>
 
 </body>
 </html>
