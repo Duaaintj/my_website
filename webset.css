@@ -367,6 +367,30 @@ hr {
 
 
 
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.2);
+}
+
+
+
+
+
 
 
 
