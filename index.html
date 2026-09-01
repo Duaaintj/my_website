@@ -101,19 +101,20 @@
         <div class="container contact-container">
             <div class="contact-left">
                 <h1>Join Our Community</h1>
-                <form>
-                    <input type="text" placeholder="Username" required>
-                    <input type="email" placeholder="Your Email Address" required>
-                    <input type="password" placeholder="Your Password" required>
-                    <div class="btn-sign">
-                        <button type="submit">Sign In</button>
-                    </div>
+                <form id="registerForm">
+                 <input type="text" id="username" placeholder="Username" required>
+                 <input type="email" id="email" placeholder="Your Email Address" required>
+                 <input type="password" id="password" placeholder="Your Password" required>
+                  <div class="btn-sign">
+                   <button type="submit">Sign In</button>
+                  </div>
+                  <p id="responseMessage" style="color: green; margin-top: 10px;"></p>
                 </form>
             </div>
-            <div class="contact-right">
+              <div class="contact-right">
                 <img src="p5.png" alt="Community">
-            </div>
-        </div>
+              </div>
+         </div>
     </section>
 
     
@@ -174,6 +175,24 @@
         sideNav.style.right = "0px";
     }
 }
+
+
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const res = await fetch('/api/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, email, password })
+            });
+            
+            const data = await res.json();
+            document.getElementById('responseMessage').innerText = data.message;
+        });
+  
     </script>
 
 </body>
