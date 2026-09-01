@@ -108,13 +108,16 @@
                   <div class="btn-sign">
                    <button type="submit">Sign In</button>
                   </div>
-                  <p id="responseMessage" style="color: green; margin-top: 10px;"></p>
                 </form>
+
+
+                 <div id="responseMessage" style="color: green; font-weight: bold; margin-top: 10px;"></div>
+               
             </div>
               <div class="contact-right">
                 <img src="p5.png" alt="Community">
-              </div>
-         </div>
+            </div>
+        </div>
     </section>
 
     
@@ -177,22 +180,44 @@
 }
 
 
-        document.getElementById('registerForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
 
-            const res = await fetch('/api/register', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, email, password })
-            });
-            
-            const data = await res.json();
-            document.getElementById('responseMessage').innerText = data.message;
-        });
-  
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById('registerForm').addEventListener('submit', async (e) => {
+    e.preventDefault();  
+
+    
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        
+       const res = await fetch('https://my-website-api-utxl.onrender.com/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, email, password })
+ });
+        
+        const data = await res.json();
+
+        
+        document.getElementById('responseMessage').innerText = data.message;
+    } catch (err) {
+        console.error(err);
+        document.getElementById('responseMessage').innerText = "erorr";
+    }
+});
+
     </script>
 
 </body>
