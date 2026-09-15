@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Article</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .form-container {
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 600px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #334155;
+            background-color: #0f172a;
+            color: #fff;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+        #responseMessage {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Create a New Article</h2>
+        <form id="postForm">
+            <label for="author">Author Name</label>
+            <input type="text" id="author" placeholder="Enter your name" required>
+
+            <label for="title">Article Title</label>
+            <input type="text" id="title" placeholder="Enter title" required>
+
+            <label for="content">Article Content</label>
+            <textarea id="content" rows="8" placeholder="Write your article content..." required></textarea>
+
+            <button type="submit">Publish Article</button>
+        </form>
+
+        <p id="responseMessage"></p>
+    </div>
+
+    <script>
+        document.getElementById('postForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const author = document.getElementById('author').value;
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+            const responseMessage = document.getElementById('responseMessage');
+
+            responseMessage.innerText = "Publishing article...";
+
+            try {
+                const res = await fetch('https://my-website-api-utxl.onrender.com/api/posts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ author, title, content })
+                });
+
+                const data = await res.json();
+
+                if (res.ok) {
+                    responseMessage.style.color = "#4ade80";
+                    responseMessage.innerText = "Article published successfully!";
+                    document.getElementById('postForm').reset();
+                } else {
+                    responseMessage.style.color = "#f87171";
+                    responseMessage.innerText = data.message || "Failed to publish article.";
+                }
+            } catch (err) {
+                responseMessage.style.color = "#f87171";
+                responseMessage.innerText = "Error connecting to the server.";
+            }
+        });
+    </script>
+
+</body>
+</html>
