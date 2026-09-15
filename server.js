@@ -25,3 +25,37 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 app.listen(PORT, () => {
     console.log(`The server is now running on the link: http://localhost:${PORT}`);
 });
+
+
+// Article Schema & Model
+const articleSchema = new mongoose.Schema({
+    author: { type: String, required: true },
+    title: { type: String, required: true },
+    content: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now }
+});
+
+const Article = mongoose.model('Article', articleSchema);
+
+// API Route to Create a New Article
+app.post('/api/posts', async (req, res) => {
+    try {
+        const { author, title, content } = req.body;
+
+        if (!author || !title || !content) {
+            return res.status(400).json({ message: 'All fields are required.' });
+        }
+
+        const newArticle = new Article({
+            author,
+            title,
+            content
+        });
+
+        await newArticle.save();
+
+        res.status(201).json({ message: 'Article published successfully!' });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error. Failed to publish article.' });
+    }
+});
