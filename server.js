@@ -49,6 +49,28 @@ app.post('/api/posts', async (req, res) => {
     res.status(500).json({ error: "Failed to publish article", details: error.message });
   }
 });
+// 5. Get All Published Articles Route
+app.get('/api/posts', async (req, res) => {
+  try {
+    const posts = await Post.find().sort({ createdAt: -1 });
+    res.json(posts);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch articles" });
+  }
+});
+
+// 6. Get Single Article Details Route
+app.get('/api/posts/:id', async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+    if (!post) {
+      return res.status(404).json({ error: "Article not found" });
+    }
+    res.json(post);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch article" });
+  }
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
