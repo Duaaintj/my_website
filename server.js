@@ -79,7 +79,7 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 // 1. Authentication Middleware
 const verifyToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1]; // Expects format: "Bearer TOKEN"
+  const token = authHeader && authHeader.split(' ')[1]; 
 
   if (!token) {
     return res.status(401).json({ message: 'Access denied. Please log in to publish a post.' });
@@ -88,7 +88,7 @@ const verifyToken = (req, res, next) => {
   try {
     const verified = jwt.verify(token, process.env.JWT_SECRET || 'your_jwt_secret');
     req.user = verified;
-    next(); // Proceed to the route handler
+    next(); 
   } catch (err) {
     res.status(403).json({ message: 'Invalid or expired token.' });
   }
@@ -100,7 +100,7 @@ app.post('/api/posts/create', verifyToken, async (req, res) => {
     const newPost = new Post({
       title: req.body.title,
       content: req.body.content,
-      author: req.user.id // Automatically links the post to the logged-in user
+      author: req.user.id 
     });
 
     const savedPost = await newPost.save();
