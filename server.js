@@ -31,18 +31,39 @@ app.post('/api/register', (req, res) => {
   res.json({ message: "Registration successful" });
 });
 
-// 4. Create and Publish Article Route
-app.post('/api/posts', async (req, res) => {
-  try {
-    const { author, title, content } = req.body;
+// Verification Middleware
+const verifyToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
 
-    if (!author || !title || !content) {
-      return res.status(400).json({ error: "جميع الحقول مطلوبة." });
+  if (!token) {
+    return res.status(401).json({ error: 'Access denied. Please log in first.' });
+  }
+
+  try {
+    const verified = jwt.verify(token, process.env.JWT_SECRET || 'your_jwt_secret');
+    req.user = verified;
+    next();
+  } catch (err) {
+    res.status(403).json({ error: 'Invalid or expired token.' });
+  }
+};
+// 4. Create and Publish Article Route
+app.post('/api/posts', verifyToken, async (req, res) => {
+  try {
+    const { title, content } = req.body;
+
+    if (!title || !content) {
+      return res.status(400).json({ error: "All fields are required" });
     }
 
-    const newPost = new Post({ author, title, content });
-    await newPost.save();
+    const newPost = new Post({
+      author: req.user.id || req.user.username,
+      title,
+      content
+    });
 
+    await newPost.save();
     res.status(201).json({ message: "Article published successfully!", post: newPost });
   } catch (error) {
     console.error("Error saving post to DB:", error.message);
@@ -76,36 +97,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
-// 1. Authentication Middleware
-const verifyToken = (req, res, next) => {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1]; 
 
-  if (!token) {
-    return res.status(401).json({ message: 'Access denied. Please log in to publish a post.' });
-  }
-
-  try {
-    const verified = jwt.verify(token, process.env.JWT_SECRET || 'your_jwt_secret');
-    req.user = verified;
-    next(); 
-  } catch (err) {
-    res.status(403).json({ message: 'Invalid or expired token.' });
-  }
-};
-
-// 2. Protected Post Creation Route
-app.post('/api/posts/create', verifyToken, async (req, res) => {
-  try {
-    const newPost = new Post({
-      title: req.body.title,
-      content: req.body.content,
-      author: req.user.id 
-    });
-
-    const savedPost = await newPost.save();
-    res.status(201).json(savedPost);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
