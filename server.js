@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 
 const app = express();
@@ -26,11 +27,22 @@ const postSchema = new mongoose.Schema({
 
 const Post = mongoose.model('Post', postSchema);
 
-// 3. User Registration Route
+// 3. User Registration Route with JWT Generation
 app.post('/api/register', (req, res) => {
-  res.json({ message: "Registration successful" });
+  const { username } = req.body;
+  
+  // Create a payload for JWT
+  const user = { username: username || "User_" + Math.floor(Math.random() * 1000) };
+  
+  // Sign JWT Token
+  const token = jwt.sign(user, process.env.JWT_SECRET || 'your_jwt_secret', { expiresIn: '1h' });
+  
+  res.json({
+    message: "Registration successful",
+    token: token,
+    user: user
+  });
 });
-
 // Verification Middleware
 const verifyToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
